@@ -18,7 +18,6 @@ export function Spinner(props: ISpinnerProps) {
   const { withBackdrop, message } = props;
   const style = cx(css.Spinner, { [css.WithBackdrop]: withBackdrop });
 
-  debugger;
   return (
     <div className={style}>
       <div className={css.Loader}>

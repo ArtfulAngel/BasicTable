@@ -11,6 +11,17 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', 'jsx'],
   },
+  stats: {
+    // copied from `'minimal'`
+    all: false,
+    modules: true,
+    maxModules: 0,
+    errors: true,
+    warnings: true,
+    // our additional options
+    moduleTrace: true,
+    errorDetails: true,
+  },
   mode: 'development',
   entry: {
     main: ['@babel/polyfill', './src/index.tsx'],
@@ -42,11 +53,19 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'style-loader',
-          'css-loader',
           {
-            loader: 'sass-loader',
-            options: { importLoaders: 2, modules: true, localIdentName: '[name]__[local]--[hash:base64:5]' },
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              modules: {
+                mode: 'local',
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+                context: resolveApp('src'),
+                hashPrefix: 'my-custom-hash',
+              },
+            },
           },
+          'sass-loader',
         ],
       },
     ],
@@ -78,7 +97,6 @@ module.exports = {
     host: '0.0.0.0',
     port: 8090,
     hot: true,
-    noInfo: true,
     stats: 'minimal',
     contentBase: './src',
   },
