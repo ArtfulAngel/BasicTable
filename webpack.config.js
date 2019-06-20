@@ -1,6 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const WebpackBar = require('webpackbar');
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
@@ -17,15 +19,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
-      },
-      {
         test: /\.(woff|woff2|ttf|eot|ico)$/,
         loader: 'file-loader',
       },
@@ -36,6 +29,26 @@ module.exports = {
           limit: 30000,
         },
       },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: { importLoaders: 2, modules: true, localIdentName: '[name]__[local]--[hash:base64:5]' },
+          },
+        ],
+      },
     ],
   },
 
@@ -45,6 +58,7 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/',
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       title: `DEV`,
@@ -54,6 +68,10 @@ module.exports = {
       inject: true,
       hash: true,
     }),
+    new WebpackBar({
+      name: 'BasicTable',
+    }),
+    new webpack.DefinePlugin({}),
   ],
   devServer: {
     historyApiFallback: true,
