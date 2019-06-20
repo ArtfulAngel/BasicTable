@@ -1,0 +1,102 @@
+.Checkbox {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.Box {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    border-radius: 3px;
+    background: #c2c3c4;
+
+    &::before {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+        content: '';
+        border-radius: 2px;
+        background: white;
+    }
+
+    &::after {
+        position: absolute;
+        width: 1.2rem;
+        height: 1.2rem;
+        transform: translateY(-5px);
+        top: -5px;
+        left: 2px;
+        visibility: hidden;
+        content: '';
+        background-image: url('../../icons/check.svg');
+        background-size: 100%;
+        opacity: 0;
+        transition: transform 0.05s ease-out, opacity 0s ease-out, visibility 0s linear 0.05s;
+    }
+}
+
+.Control {
+    position: absolute;
+    z-index: -1;
+    margin: 0;
+    opacity: 0;
+}
+
+.isDisabled {
+    opacity: 0.5;
+    color: #9e9fa1;
+    background-color: #9e9fa1;
+    opacity: 0.5;
+    box-shadow: 0 0 0 1px #c2c3c4, inset 0 0 0 1px #c2c3c4; //
+
+    &::before {
+        background-color: #e0e0e1;
+        box-shadow: 0 0 0 1px #c2c3c4, inset 0 0 0 1px #c2c3c4;
+    }
+}
+
+.isChecked {
+    // background-color: #071f3d;
+
+    &::before {
+        background: white;
+    }
+
+    &::after {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Indeterminate {
+    // background-color: #071f3d;
+
+    &::before {
+        position: absolute;
+        background: white;
+
+        content: '--';
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-align: center;
+        z-index: 2;
+    }
+
+    &::after {
+        background-image: none;
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        top: 0;
+        left: 0;
+    }
+}
