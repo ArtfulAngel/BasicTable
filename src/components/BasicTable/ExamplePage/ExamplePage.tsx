@@ -4,6 +4,8 @@ import { BasicTable } from '../BasicTable';
 import { columns } from './columns';
 import { config } from './table.config';
 
+import data from './data.json';
+
 export function ExamplePage() {
     const [sortParametrs, setSortParametrs] = useState({ field: 'contractorName', descDirection: false });
     const [currentRow, setCurrentRow] = useState();
@@ -40,7 +42,7 @@ export function ExamplePage() {
                 config={config}
                 isLoading={false}
                 sortParametrs={sortParametrs}
-                data={[]}
+                data={data}
                 extraProps={extraProps}
                 // actionCells={actionCells}
             />

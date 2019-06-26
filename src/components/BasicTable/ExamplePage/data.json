@@ -1,0 +1,74 @@
+[
+    {
+        "category": "Квартиры",
+        "id": 1061563885,
+        "imageCount": 13,
+        "image_url": "https://65.img.avito.st/140x105/5604801265.jpg",
+        "price": 1750000,
+        "title": "2-к квартира, 45 м², 2/5 эт.",
+        "url": "/novosibirsk/kvartiry/2-k_kvartira_45_m_25_et._1061563885"
+    },
+    {
+        "category": "Квартиры",
+        "id": 1178711770,
+        "imageCount": 9,
+        "image_url": "https://90.img.avito.st/140x105/5723121190.jpg",
+        "price": 1849000,
+        "title": "2-к квартира, 45 м², 4/5 эт.",
+        "url": "/novosibirsk/kvartiry/2-k_kvartira_45_m_45_et._1178711770"
+    },
+    {
+        "category": "Детская одежда и обувь",
+        "id": 1375250877,
+        "imageCount": 2,
+        "image_url": "https://43.img.avito.st/140x105/5713627943.jpg",
+        "price": 100,
+        "title": "Продам джинсовый костюм",
+        "url": "/kemerovo/detskaya_odezhda_i_obuv/prodam_dzhinsovyy_kostyum_1375250877"
+    },
+    {
+        "category": "Детская одежда и обувь",
+        "id": 1379204364,
+        "imageCount": 3,
+        "image_url": "https://54.img.avito.st/140x105/5713622254.jpg",
+        "price": 150,
+        "title": "Продам джинсовый костюм",
+        "url": "/kemerovo/detskaya_odezhda_i_obuv/prodam_dzhinsovyy_kostyum_1379204364"
+    },
+    {
+        "category": "Ремонт и строительство",
+        "id": 1423591271,
+        "imageCount": 2,
+        "image_url": "https://94.img.avito.st/140x105/5565710994.jpg",
+        "price": 3500,
+        "title": "Ленточная шлифмашинка Интерскол лшм-800",
+        "url": "/kemerovo/remont_i_stroitelstvo/lentochnaya_shlifmashinka_interskol_lshm-800_1423591271"
+    },
+    {
+        "category": "Ремонт и строительство",
+        "id": 1437675197,
+        "imageCount": 3,
+        "image_url": "https://31.img.avito.st/140x105/5132886931.jpg",
+        "price": 1500,
+        "title": "Шлифмашинка вибрационная",
+        "url": "/topki/remont_i_stroitelstvo/shlifmashinka_vibratsionnaya_1437675197"
+    },
+    {
+        "category": "Бытовая техника",
+        "id": 1776730410,
+        "imageCount": 1,
+        "image_url": "https://72.img.avito.st/140x105/5730208172.jpg",
+        "price": 755,
+        "title": "Регулятор конфорки однозонный 50.87021.000",
+        "url": "/kemerovo/bytovaya_tehnika/regulyator_konforki_odnozonnyy_50.87021.000_1776730410"
+    },
+    {
+        "category": "Бытовая техника",
+        "id": 1782410718,
+        "imageCount": 1,
+        "image_url": "https://59.img.avito.st/140x105/5730185859.jpg",
+        "price": 700,
+        "title": "Стиральная машина",
+        "url": "/kemerovo/bytovaya_tehnika/stiralnaya_mashina_1782410718"
+    }
+]
