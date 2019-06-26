@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Checkbox.scss';
 
@@ -13,40 +13,43 @@ interface ICheckboxProps {
     onChange?: (value: boolean) => void;
 }
 
-export function Checkbox({ name = 'checkbox', disabled, indeterminate, checked, label, onChange }: ICheckboxProps) {
-    // debugger;
-    const getClassNames = () =>
-        cx(
-            styles.Checkbox,
-            { [styles.isDisabled]: disabled },
-            { [styles.isChecked]: Boolean(!indeterminate && checked) },
-            { [styles.Indeterminate]: indeterminate }
-        );
+export function Checkbox({
+    name = 'customCheckbox',
+    disabled = false,
+    indeterminate = false,
+    checked,
+    label = ' ',
+    onChange,
+}: ICheckboxProps) {
+    const checkboxInputRef = useRef(null);
 
-    const handleChange = e => {
-        e.preventDefault();
-        const { onChange, disabled, indeterminate, checked } = props;
+    useEffect(() => {
+        if (checkboxInputRef) {
+            checkboxInputRef.current.indeterminate = indeterminate && checked;
+        }
+    }, [indeterminate]);
 
+    const handleChange: React.ChangeEventHandler<HTMLElement> = event => {
+        event.preventDefault();
         if (indeterminate) {
-            onChange(false);
+            onChange && onChange(false);
         } else {
-            onChange(!checked);
+            onChange && onChange(!checked);
         }
     };
 
     return (
-        <div className={getClassNames()} onClick={!disabled ? handleChange : null}>
-            <div className={styles.Box}>
-                <input
-                    className={styles.Control}
-                    name={name}
-                    type="checkbox"
-                    disabled={disabled}
-                    checked={checked}
-                    onChange={handleChange}
-                />
-            </div>
-            {label}
+        <div className={styles.Checkbox}>
+            <input
+                id={name}
+                name={name}
+                ref={checkboxInputRef}
+                type="checkbox"
+                disabled={disabled}
+                checked={checked}
+                onChange={handleChange}
+            />
+            {label && <label htmlFor={name}>{label}</label>}
         </div>
     );
 }

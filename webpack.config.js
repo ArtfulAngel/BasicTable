@@ -8,6 +8,7 @@ const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 module.exports = {
+    mode: 'development',
     resolve: {
         extensions: ['.tsx', '.ts', '.js', 'jsx'],
     },
@@ -22,7 +23,6 @@ module.exports = {
         moduleTrace: true,
         errorDetails: true,
     },
-    mode: 'development',
     entry: {
         main: ['@babel/polyfill', './src/index.tsx'],
     },
