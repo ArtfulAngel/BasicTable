@@ -1,0 +1,39 @@
+@import '../_variable';
+
+.BasicTableFooter {
+    display: inline-flex;
+    height: $header-row_height;
+    background-color: $gray-100;
+    overflow: hidden;
+}
+
+.FooterCell {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 0.5rem;
+    overflow: hidden;
+    @include font-base(0.8rem);
+    font-weight: 600;
+    border-right: 1px $gray-300 solid;
+    border-bottom: 1px $gray-300 solid;
+}
+
+.Caption {
+    display: inline;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    user-select: none;
+    transform: none;
+    overflow: hidden;
+}
+
+.isPositive {
+    color: green;
+}
+
+.isNegative {
+    color: red;
+}

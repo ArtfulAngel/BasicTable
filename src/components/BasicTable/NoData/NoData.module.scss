@@ -1,0 +1,7 @@
+@import '../_variable';
+
+.NoData {
+    @include font-base(2rem);
+
+    padding: 0.5rem 1rem;
+}

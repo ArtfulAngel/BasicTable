@@ -1,0 +1,33 @@
+@import '../../_variable';
+
+.BasicTableRow {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    height: $data-row_height;
+    background: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    &:hover {
+        background: $gray-200;
+    }
+
+    &:active {
+        background-color: $gray-400;
+        transition: background 0s;
+    }
+    cursor: pointer;
+}
+
+.isDisabled {
+    opacity: 0.5;
+    background: $gray-100;
+    user-select: none;
+    cursor: not-allowed;
+}
+
+.isSelected {
+    border-top: 1px darkblue dashed;
+    border-bottom: 1px darkblue dashed;
+    background-color: $gray-300;
+}

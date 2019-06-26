@@ -1,0 +1,71 @@
+@mixin font-base($font-size: 16px) {
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-size;
+    font-weight: 400;
+    color: $dark-indigo-900;
+}
+/*
+Z-INDEXES
+*/
+$zGrid: 1;
+$zHeader: 5;
+$zGridBody: 2;
+$zExpandableCell: 7;
+$zFixedCell: 4;
+$zFooter: 5;
+$zScroll: 6;
+$zPopup: 7;
+$zModal: 8;
+
+$header-row_height: 2rem;
+$data-row_height: 1.87rem;
+
+$gray-50: #f9f9f9;
+$gray-100: #ededed;
+$gray-200: #e0e0e1;
+$gray-300: #d2d2d3;
+$gray-400: #c2c3c4;
+$gray-500: #b1b3b4;
+$gray-600: #9e9fa1;
+$gray-700: #87898b;
+$gray-800: #696c6f;
+$gray-900: #3c3f43;
+
+$blue-gray-50: #eceff1;
+$blue-gray-100: #cfd8dc;
+$blue-gray-200: #b0bec5;
+$blue-gray-300: #90a4ae;
+$blue-gray-400: #78909c;
+$blue-gray-500: #607d8b;
+$blue-gray-600: #546e7a;
+$blue-gray-700: #455a64;
+$blue-gray-800: #37474f;
+$blue-gray-900: #263238;
+
+$dark-indigo-50: #6198db;
+$dark-indigo-100: #407cc5;
+$dark-indigo-200: #2760a7;
+$dark-indigo-300: #184d8d;
+$dark-indigo-400: #113f77;
+$dark-indigo-500: #0e3464;
+$dark-indigo-600: #0c2e58;
+$dark-indigo-700: #09284e;
+$dark-indigo-800: #071f3d; //main background
+$dark-indigo-900: #041427;
+
+@mixin raised-block {
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+@mixin ripple-fx {
+    &:hover {
+        background: $gray-200 radial-gradient(transparent 1%, $gray-200 1%) center/15000%;
+    }
+
+    &:active {
+        background-color: $gray-400;
+        background-size: 100%;
+        transition: background 0s;
+    }
+}

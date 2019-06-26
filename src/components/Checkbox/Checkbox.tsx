@@ -30,7 +30,7 @@ export function Checkbox({
     }, [indeterminate]);
 
     const handleChange: React.ChangeEventHandler<HTMLElement> = event => {
-        event.preventDefault();
+        event.stopPropagation();
         if (indeterminate) {
             onChange && onChange(false);
         } else {

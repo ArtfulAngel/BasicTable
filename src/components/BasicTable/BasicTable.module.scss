@@ -1,0 +1,73 @@
+@import './variable';
+
+.BasicTable {
+    @include raised-block;
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: $zGrid;
+    overflow: hidden;
+}
+
+.Scroll {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        'header'
+        'body'
+        'footer';
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+
+    &::-webkit-scrollbar {
+        width: 0.8rem;
+        height: 0.8rem;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 0.4rem;
+        background: $gray-300;
+        border: 1px $gray-200 solid;
+        cursor: pointer;
+        &:hover {
+            background: $gray-400;
+        }
+        &:active {
+            background: $blue-gray-200;
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 0.4rem;
+        background: $gray-50;
+        border: 1px $gray-200 solid;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2) inset;
+    }
+}
+
+.Header {
+    grid-area: header;
+    display: inline-flex;
+    position: sticky;
+    top: 0;
+    z-index: $zHeader;
+}
+
+.Body {
+    grid-area: body;
+    z-index: $zGridBody;
+}
+
+.Footer {
+    grid-area: footer;
+    display: inline-flex;
+    position: sticky;
+    bottom: 0;
+    z-index: $zFooter;
+}

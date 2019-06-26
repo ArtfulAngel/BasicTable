@@ -1,0 +1,44 @@
+@import '../_variable';
+
+.BasicTableHeader {
+    display: inline-flex;
+    position: sticky;
+    top: 0;
+    @include font-base(0.87rem);
+    text-align: center;
+
+    height: $header-row_height;
+    background-color: rgba(222, 223, 224, 0.876);
+    overflow: hidden;
+}
+
+.HeaderCell {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: $header-row_height;
+    padding: 0 0.5rem;
+    margin: 0;
+    box-sizing: border-box;
+    border-right: 1px $gray-200 solid;
+    border-bottom: 1px $gray-200 solid;
+
+    cursor: pointer;
+    @include ripple-fx;
+
+    img {
+        max-width: 1rem;
+        max-height: 1rem;
+        margin-right: 0.15rem;
+    }
+}
+
+.Caption {
+    display: inline;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    user-select: none;
+    transform: none;
+    overflow: hidden;
+}

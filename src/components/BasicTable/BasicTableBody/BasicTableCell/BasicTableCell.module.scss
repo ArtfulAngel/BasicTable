@@ -1,0 +1,43 @@
+@import '../../_variable';
+
+.Wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 0.5rem;
+    overflow: hidden;
+    @include font-base(0.85rem);
+    border-right: 1px $gray-200 solid;
+    border-bottom: 1px $gray-200 solid;
+}
+
+.Cell {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: none;
+    user-select: none;
+}
+
+.Checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.isSelector {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.isPositive {
+    color: green;
+}
+
+.isNegative {
+    color: red;
+}
